@@ -1,4 +1,22 @@
 ---3---
+Steps:
+1.	Creating Java project.
+•	Click on File and select New project
+•	Enter project name as com.vogella.JUnit.Basic
+•	Click on Next and then on Finish
+2.	Creating java Test Project
+•	Right click on com.vogella.JUnit.Basic.
+•	Click on properties and select tab java build path
+•	Click on source and click on Create New Folder.
+•	Give the folder name as Test and click on next.
+•	Click on Finish and then on OK
+3.	Creating java class
+•	Right click on com.vogella.JUnit.Basic and click on New .
+•	Click on class and give the class name as Addition 
+•	Click on Finish
+•	Type the following code
+
+
 package com.vogella.JUnit.Basic;
 public class Addition {
 public int addNumbers(int a , int b)
@@ -159,6 +177,16 @@ assertEquals(s.fun(first,second,third),expected);
 
 
 ----6---
+
+Aim: To perform testing visual c# using NUnit.
+Procedure:
+Steps:
+1.	Creating Class Library.
+●	Click on File and select New project
+●	Click on Visual C# and rename it as Program1
+●	Click on Finish
+2.	Add the following code
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -193,6 +221,12 @@ namespace Leela64
         {
             return (x * y);
         } }
+
+3.	 Add new class Library
+●	Right click on Project in Solution explorer.
+●	Click on Add and New Project(Class Library) 
+●	Type the following code
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -230,6 +264,19 @@ namespace Test
         }}}
 
 
+4.	Add references
+●	Right Click on Test and click on Add references
+●	Add the Existing Project and also nunit.framework.dll 
+●	Click on OK
+5.	Build Solution
+●	Click on Build
+●	Now click on Build Solution
+6.	Testing using NUnit
+●	Open NUnit and click on File
+●	Click on Open project and select the Visual Project
+●	Select the test code project.
+●	Click on bin and then on debug and then on Test.nunit.dll
+●	Click on Run
 
 
 -----7-----using System;
