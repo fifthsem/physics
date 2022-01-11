@@ -1,0 +1,64 @@
+package arsmstrognumber123;
+
+public class ArmStrongClass {
+
+	public int IsArmStrong(int n) {
+		int temp;
+		int digits = 0, sum = 0, last = 0;
+		temp = n;
+		while (temp > 0) {
+			temp = temp / 10;
+			digits++;
+		}
+		temp = n;
+		while (temp > 0) {
+			last = temp % 10;
+			sum = (int) (sum + (Math.pow(last, digits)));
+			temp = temp / 10;
+		}
+		if (n == sum) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+}
+---------
+package arsmstrognumber123;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.Arrays;
+import java.util.Collection;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+
+@RunWith(Parameterized.class)
+public class ArmStrongTest {
+
+	private int expected;
+	private int first;
+
+	public ArmStrongTest(int expectedresult, int firstnumber) {
+		this.expected = expectedresult;
+		this.first = firstnumber;
+	}
+
+	@Parameters
+	public static Collection<Integer[]> armstrongnumbers() {
+		return Arrays.asList(new Integer[][] { { 1, 154 } });
+	}
+
+	@Test
+	public void test() {
+		ArmStrongClass a = new ArmStrongClass();
+		System.out.println("without parameters" + first);
+		assertEquals(expected, a.IsArmStrong(first));
+
+	}
+
+}
