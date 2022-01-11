@@ -1,0 +1,64 @@
+package strongnumber123;
+
+public class StrongClass {
+
+	public int IsStrong(int n) {
+		int total = 0;
+		int temp = n;
+		int i;
+		int fact_n, last;
+		while (n != 0) {
+			fact_n = 1;
+			last = n % 10;
+			for (i = last; i >= 1; i--) {
+				fact_n = fact_n * i;
+			}
+			total = total + fact_n;
+			n = n / 10;
+		}
+		if (total == temp) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+}
+------------
+package strongnumber123;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.Arrays;
+import java.util.Collection;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+
+@RunWith(Parameterized.class)
+public class StrongTest {
+
+	private int expected;
+	private int first;
+
+	public StrongTest(int expectedresult, int firstnumber) {
+		this.expected = expectedresult;
+		this.first = firstnumber;
+	}
+
+	@Parameters
+	public static Collection<Integer[]> strongnumbers() {
+		return Arrays.asList(new Integer[][] { { 1, 148 } });
+	}
+
+	@Test
+	public void test() {
+		StrongClass ss = new StrongClass();
+		System.out.println("without parameters" + first);
+		assertEquals(expected, ss.IsStrong(first));
+
+	}
+
+}
