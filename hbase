@@ -1,0 +1,37 @@
+hbase shell 
+create 'student', 'name', 'subject'
+0 row(s) in 0.4170 seconds
+
+Hbase::Table - student
+
+list 'student'
+
+put 'student', '001', 'name:firstname', 'Gopi'
+
+put 'student', '001', 'name:lastname', 'Chand'
+
+put 'student', '001', 'name:fullname', 'GopiChand'
+
+put 'student', '001', 'subject:s1', 'Data Analytics'
+
+put 'student', '001', 'subject:s2', 'Data mining'
+put 'student', '001', 'subject:s3', 'Operating system'
+
+put 'student', '002', 'name:firstname', 'James'
+put 'student', '002', 'name:lastname', 'Anderson'
+put 'student', '002', 'name:fullname', 'James Anderson'
+
+put 'student', '002', 'subject:s1', 'Algorithms'
+put 'student', '002', 'subject:s2', 'Theory of computation'
+put 'student', '002', 'subject:s3', 'Compiler design'
+
+scan 'student'
+
+get 'student', '001'
+
+disable 'student'
+
+enable 'student'
+
+drop 'student'
+quit
